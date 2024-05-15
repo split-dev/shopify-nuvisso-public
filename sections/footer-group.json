@@ -1,0 +1,63 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "PRODUCTS",
+            "menu": "prouducts-mega-menu"
+          }
+        },
+        "73df6b5c-d528-41ba-bc51-4d5a1cfb66b1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "ABOUT US",
+            "menu": "about-us"
+          }
+        },
+        "cce84e68-6e84-4399-95bc-4a6fe9bac5e8": {
+          "type": "link_list",
+          "settings": {
+            "heading": "CONTACT US",
+            "menu": "contact-us"
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "73df6b5c-d528-41ba-bc51-4d5a1cfb66b1",
+        "cce84e68-6e84-4399-95bc-4a6fe9bac5e8"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "use_wave": true,
+        "overlap_template_names": "index",
+        "overlap_template_suffixes": "our-story-second",
+        "logo": "shopify:\/\/shop_images\/logo-yellow.svg",
+        "logo_width": 140,
+        "logo_margin_bottom": 50,
+        "logo_margin_bottom_mobile": 30,
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": true,
+        "margin_top": 16,
+        "padding_top": 96,
+        "padding_bottom": 40,
+        "padding_top_mob": 40,
+        "padding_bottom_mob": 38
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,188 @@
+{{ 'text-and-bg-row.out.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign imageWidth = section.settings.image.width
+  assign imageHeight = imageWidth | divided_by: section.settings.image.aspect_ratio
+  if section.settings.image_lazy
+    assign imageLoading = 'lazy'
+  else
+    assign imageLoading = ''
+  endif
+-%}
+
+{%- style -%}
+   .section-{{ section.id }}-padding {
+     padding-top: {{ section.settings.padding_top_mob }}px;
+     padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+   }
+
+   @media screen and (min-width: 750px) {
+     .section-{{ section.id }}-padding {
+       padding-top: {{ section.settings.padding_top }}px;
+       padding-bottom: {{ section.settings.padding_bottom }}px;
+     }
+   }
+   .color-title-{{ section.id }} {
+  color: {{ section.settings.color_title }};
+   }
+   .color-text-{{ section.id }} {
+  color: {{ section.settings.color_text }};
+   }
+{%- endstyle -%}
+
+<section class="text-and-bg-row color-{{ section.settings.color_scheme }}">
+  <div
+    class="text-and-bg-row__wrapper d-flex flex-column flex-lg-row w-100"
+  >
+    <div class="position-relative text-and-bg-row__text section-{{ section.id }}-padding">
+      <div class="text-and-bg-row__background">
+        {%- if section.settings.image != blank -%}
+          <picture>
+            {{
+              section.settings.image
+              | image_url: width: 3840
+              | image_tag:
+                loading: imageLoading,
+                width: imageWidth,
+                height: imageHeight,
+                class: imageClass,
+                sizes: '100vw',
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+            }}
+          </picture>
+        {%- endif -%}
+      </div>
+      <div
+        class="text-and-bg-row__content position-relative z-index-2 scroll-trigger animate--slide-in"
+        style="--animation-order: 2;"
+        data-cascade
+      >
+        <h2 class="text-and-bg-row__title text-uppercase color-title-{{ section.id }}">{{ section.settings.title }}</h2>
+        <div class="text-and-bg-row__description color-text-{{ section.id }}">{{ section.settings.description }}</div>
+      </div>
+    </div>
+    <div class="position-relative text-and-bg-row__text section-{{ section.id }}-padding">
+      <div class="text-and-bg-row__background">
+        {%- if section.settings.image_2 != blank -%}
+          <picture>
+            {{
+              section.settings.image_2
+              | image_url: width: 3840
+              | image_tag:
+                loading: imageLoading,
+                width: imageWidth,
+                height: imageHeight,
+                class: imageClass,
+                sizes: '100vw',
+                widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+            }}
+          </picture>
+        {%- endif -%}
+      </div>
+      <div
+        class="text-and-bg-row__content position-relative z-index-2 scroll-trigger animate--slide-in"
+        style="--animation-order: 2;"
+        data-cascade
+      >
+        <h2 class="text-and-bg-row__title text-uppercase color-title-{{ section.id }}">
+          {{ section.settings.title_2 }}
+        </h2>
+        <div class="text-and-bg-row__description color-text-{{ section.id }}">{{ section.settings.description_2 }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Text And Bg Row",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color Title"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Color Text"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "description_2",
+      "label": "Text"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mob",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top Mobile",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mob",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom Mobile",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text And Bg Row",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

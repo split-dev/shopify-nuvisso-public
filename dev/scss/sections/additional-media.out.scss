@@ -1,0 +1,43 @@
+
+@import '../settings/variables';
+
+.additional-media{
+
+  padding-top: 40px;
+
+  & li{
+    list-style-type: none;
+  }
+
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: -17px;
+    margin-left: -17px;
+  }
+
+  &__item{
+    margin-top: 17px;
+    margin-left: 17px;
+
+    width: calc((100% / 2) - 17px);
+    height: 165px;
+
+    overflow: hidden;
+
+    & img{
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media screen and (min-width: $lg){
+      & {
+        height: 330px;
+      }
+    }
+  }
+}

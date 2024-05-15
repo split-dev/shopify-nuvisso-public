@@ -1,0 +1,63 @@
+{%- for option in product.options_with_values -%}
+  {% for value in option.values %}
+    {%- liquid
+      assign prod_metafields = product.variants[forloop.index0].metafields
+      assign var_id = product.variants[forloop.index0].id
+      assign first_side = ''
+      assign current_var = false
+
+      if var_id == product.selected_or_first_available_variant.id
+        assign current_var = true
+      endif
+
+      if prod_metafields.custom.left_size != blank
+        assign first_side = 'left'
+      elsif prod_metafields.custom.back_size != blank
+        assign first_side = 'back'
+      elsif prod_metafields.custom.right_size != blank
+        assign first_side = 'right'
+      endif
+    -%}
+
+    <div
+      class="customizer__sides {% if current_var == false %}visually-hidden{% endif %}"
+      data-variantid="{{ var_id }}"
+    >
+      {%- if prod_metafields.custom.left_size != blank -%}
+        <img
+          src="{{ prod_metafields.custom.left_size | image_url: width: 600 }}"
+          alt="{{ prod_metafields.custom.left_size.alt | default: 'customizer bottle image' }}"
+          width=""
+          height=""
+          loading="lazy"
+          data-side="left"
+          class="{% if first_side != 'left' %}visually-hidden{% endif %}"
+        >
+      {%- endif -%}
+
+      {%- if prod_metafields.custom.back_size != blank -%}
+        <img
+          src="{{ prod_metafields.custom.back_size | image_url: width: 600 }}"
+          alt="{{ prod_metafields.custom.back_size.alt | default: 'customizer bottle image' }}"
+          width=""
+          height=""
+          loading="lazy"
+          data-side="back"
+          class="{% if first_side != 'back' %}visually-hidden{% endif %}"
+        >
+      {%- endif -%}
+
+      {%- if prod_metafields.custom.right_size != blank -%}
+        <img
+          src="{{ prod_metafields.custom.right_size | image_url: width: 600 }}"
+          alt="{{ prod_metafields.custom.right_size.alt | default: 'customizer bottle image' }}"
+          width=""
+          height=""
+          loading="lazy"
+          data-side="right"
+          class="{% if first_side != 'right' %}visually-hidden{% endif %}"
+        >
+      {%- endif -%}
+    </div>
+  {% endfor %}
+{%- endfor -%}

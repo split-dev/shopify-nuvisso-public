@@ -1,0 +1,336 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "judge_me_reviews_preview_badge_T69XQA": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "custom_liquid_JeTBnm": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'tabby-installments'%}"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "50813b1d-626d-4f7f-856d-b850cdc565d6": {
+          "type": "size",
+          "settings": {
+            "size_element": "{{ product.metafields.custom.size.value }}"
+          }
+        },
+        "fa23fff4-7472-4e68-8331-ff51aac4f6f0": {
+          "type": "quantity_and_buy_buttons",
+          "settings": {
+            "show_quantity": true,
+            "show_buy_btn": true,
+            "show_dynamic_checkout": false
+          }
+        },
+        "customizer_7NqWVd": {
+          "type": "customizer",
+          "settings": {
+            "img_width_center": 35,
+            "img_width_down": 30,
+            "font_size_center": 17,
+            "font_size_down": 9,
+            "font_position_center": 30,
+            "font_position_down": 0,
+            "comment": "",
+            "notes": "<p><strong>Notes<\/strong><\/p><ul><li>Personalized items are final sale.<\/li><li>We are unable to print special text requests or emojis at this time. Please stick to standart English characters<\/li><li>Personalization will appear on the reverse side of the Nuvisso logo<\/li><\/ul><p>During peak seasons, orders containing personalized items may experience a slower processing time and ship within 3 to 5 buisness days of receipt.<\/p><p><em>Thanks!<\/em><\/p>",
+            "show_custom_img": false
+          }
+        },
+        "34263066-a345-4279-a0e1-571bba906a5f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ product.metafields.custom.accordion_title_first.value }}",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.product_details | metafield_tag }}",
+            "page": ""
+          }
+        },
+        "6167c0c1-b9d0-422e-b5ae-b2cecfdcefb2": {
+          "type": "collapsible_tab_meta",
+          "settings": {
+            "heading": ""
+          }
+        },
+        "collapsible-row-2": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Package Inclusions",
+            "icon": "none",
+            "content": "<p>Unbox an experience with Peak Guard. The package includes not one but two lids for versatile use - one for a classic sip and the other for a straw-based experience. The accompanying straw, made from high-quality PE, makes your sipping style convenient. And tucked in there is a Thank You Card - a gesture of gratitude because Nuvisso appreciates you choosing Peak Guard.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible-row-1": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Material Composition",
+            "icon": "none",
+            "content": "<p>Peak Guard boasts a thoughtful combination of materials for both durability and safety. The double-wall construction with 304 stainless steel ensures it can handle whatever your day throws at it. The PP + TPR lid and silicon seal ring? They're your spill-free insurance. The straw, crafted from PE, adds a layer of functionality, making every sip smooth and refreshing.<\/p>",
+            "page": ""
+          }
+        },
+        "6084b171-8eb3-40e5-aaae-fc214bb4259f": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Capacity and Dimensions",
+            "icon": "none",
+            "content": "<p>With a generous capacity of 960ml\/32oz, Peak Guard provides ample hydration for your active lifestyle, ensuring you stay hydrated throughout your day. The compact dimensions of 8.8 by 26.9 cm and a weight of 498g make it an ideal companion.<\/p>",
+            "page": ""
+          }
+        },
+        "d32c57d9-8c5e-4083-8adc-374721222200": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "FAQ",
+            "icon": "none",
+            "content": "<p><strong>Are Nuvisso hydration products safe to use?<\/strong><\/p><p>Yes, all Nuvisso hydration products are crafted with safety in mind. They are made from high-quality materials, including 304 stainless steel and BPA-free plastics, ensuring your hydration experience is both stylish and safe.<\/p><p><br\/><\/p><p><strong>How do I clean and maintain my Nuvisso water bottle?<\/strong><\/p><p>Cleaning instructions vary slightly between models, but generally, it is recommended to hand wash with mild soap and warm water. Avoid using bleach or abrasive cleaners. Please refer to the product manual for specific care instructions.<\/p><p><br\/><\/p><p><strong>Can I use Nuvisso water bottles for both hot and cold beverages?<\/strong><\/p><p>Absolutely! Nuvisso water bottles are designed for versatility. They can keep your drinks cold for up to 24 hours or hot for 12 hours, providing a wide range of beverage options.<\/p><p><br\/><\/p><p><strong>What sets Nuvisso apart in terms of design philosophy?<\/strong><\/p><p>Nuvisso stands out for its commitment to blending chic aesthetics with functionality, creating hydration products that not only elevate your daily routine but also reflect a sense of style and sophistication.<\/p><p><br\/><\/p><p><strong>Can I expect consistent performance across all Nuvisso hydration products?<\/strong><\/p><p>Yes, Nuvisso maintains a commitment to quality and performance across its entire range. Whether you choose from the Daily or Enthusiast Collection, you can trust that each product undergoes stringent standards for durability and functionality.<\/p><p><br\/><\/p><p><strong>Are Nuvisso hydration products environmentally friendly?<\/strong><\/p><p>Nuvisso is dedicated to sustainability. Our products are crafted with eco-friendly materials, and we encourage responsible consumption by providing durable, reusable alternatives to single-use plastics.<\/p><p><br\/><\/p><p><strong>How does Nuvisso cater to different lifestyles with its hydration offerings?<\/strong><\/p><p>Nuvisso recognizes the diversity of lifestyles and offers hydration companions tailored for various needs – from daily routines to active lifestyles. Our range includes sleek designs suitable for work, travel, fitness, and more.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "variant_picker",
+        "price",
+        "judge_me_reviews_preview_badge_T69XQA",
+        "custom_liquid_JeTBnm",
+        "description",
+        "50813b1d-626d-4f7f-856d-b850cdc565d6",
+        "fa23fff4-7472-4e68-8331-ff51aac4f6f0",
+        "customizer_7NqWVd",
+        "34263066-a345-4279-a0e1-571bba906a5f",
+        "6167c0c1-b9d0-422e-b5ae-b2cecfdcefb2",
+        "collapsible-row-2",
+        "collapsible-row-1",
+        "6084b171-8eb3-40e5-aaae-fc214bb4259f",
+        "d32c57d9-8c5e-4083-8adc-374721222200"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "show_additional_media": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "image-with-text-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ product.metafields.custom.first_pdp_title_.value }}",
+            "heading_size": "hl"
+          }
+        },
+        "f4eaa0e9-bf1a-453f-bad6-da206ffad71d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.first_pdp_subtitle | metafield_tag }}<\/p>",
+            "text_style": "subtitle-custom"
+          }
+        },
+        "image-with-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.first_pdp_text | metafield_tag }}",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "image-with-text-0",
+        "f4eaa0e9-bf1a-453f-bad6-da206ffad71d",
+        "image-with-text-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "{{ product.metafields.custom.first_pdp_image.value }}",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "155ba71b-7f38-459b-9c99-d3260e76aea5": {
+      "type": "image-banner",
+      "blocks": {
+        "template--20332237324572__155ba71b-7f38-459b-9c99-d3260e76aea5-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ product.metafields.custom.pdp_banner_title.value }}",
+            "heading_size": "hl"
+          }
+        },
+        "template--20332237324572__155ba71b-7f38-459b-9c99-d3260e76aea5-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.pdp_banner_text.value }}",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--20332237324572__155ba71b-7f38-459b-9c99-d3260e76aea5-heading-1",
+        "template--20332237324572__155ba71b-7f38-459b-9c99-d3260e76aea5-text-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "{{ product.metafields.custom.pdp_banner_image.value }}",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "230fd3ca-4856-434f-9509-eaa18dfeb129": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--20332237324572__230fd3ca-4856-434f-9509-eaa18dfeb129-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ product.metafields.custom.second_pdp_title.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "template--20332237324572__230fd3ca-4856-434f-9509-eaa18dfeb129-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.second_pdp_subtitle | metafield_tag }}<\/p>",
+            "text_style": "subtitle-custom"
+          }
+        },
+        "30e1ac59-2672-4607-ab39-8e8407dbd3e1": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.second_pdp_text | metafield_tag }}",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--20332237324572__230fd3ca-4856-434f-9509-eaa18dfeb129-heading-1",
+        "template--20332237324572__230fd3ca-4856-434f-9509-eaa18dfeb129-text-1",
+        "30e1ac59-2672-4607-ab39-8e8407dbd3e1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "{{ product.metafields.custom.second_pdp_image.value }}",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16917384550ef4788b": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "171019727718cc18f1": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_XNXVYn": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_XNXVYn"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image-with-text",
+    "155ba71b-7f38-459b-9c99-d3260e76aea5",
+    "230fd3ca-4856-434f-9509-eaa18dfeb129",
+    "16917384550ef4788b",
+    "related-products",
+    "171019727718cc18f1"
+  ]
+}

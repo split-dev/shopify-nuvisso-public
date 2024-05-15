@@ -1,0 +1,133 @@
+.newsletter__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 48px;
+}
+
+.newsletter {
+  position: relative;
+  overflow-x: clip;
+}
+
+.newsletter img.bg-image {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  z-index: 3;
+}
+.newsletter img.bg-image:first-of-type {
+  width: 160px;
+  height: 160px;
+  top: 177px;
+  left: -60px;
+}
+.newsletter img.bg-image:nth-of-type(2n) {
+  width: 160px;
+  height: 160px;
+  top: -80px;
+  right: 0;
+}
+.newsletter img.bg-image:nth-of-type(3n) {
+  width: 180px;
+  height: 180px;
+  bottom: -24px;
+  right: 0;
+}
+@media screen and (min-width: 750px) {
+  .newsletter img.bg-image:first-of-type {
+    top: unset;
+    left: -30px;
+    bottom: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .newsletter img.bg-image:first-of-type {
+    width: 220px;
+    height: 220px;
+    bottom: unset;
+    top: 42px;
+    left: unset;
+    right: 450px;
+  }
+  .newsletter img.bg-image:nth-of-type(2n) {
+    width: 240px;
+    height: 240px;
+    right: 150px;
+  }
+  .newsletter img.bg-image:nth-of-type(3n) {
+    width: 240px;
+    height: 240px;
+    right: 70px;
+    bottom: -80px;
+  }
+}
+
+
+.newsletter__wrapper {
+  z-index: 4;
+}
+
+.newsletter__wrapper.content-container--full-width {
+  padding-right: var(--page-width-x-paddings-mobile);
+  padding-left: var(--page-width-x-paddings-mobile);
+}
+
+.newsletter__wrapper h2 {
+  font-size: calc(var(--font-body-scale) * 2rem);
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter__wrapper.content-container--full-width {
+    padding-right: 9rem;
+    padding-left: 9rem;
+  }
+
+  .newsletter__wrapper h2 {
+    font-size: calc(var(--font-body-scale) * 3.6rem);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .newsletter__wrapper {
+    grid-column-gap: 72px;
+  }
+}
+
+.newsletter__wrapper > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* .newsletter__wrapper > * + * {
+  margin-top: 2rem;
+} */
+
+.newsletter__wrapper > * + .newsletter-form {
+  margin-top: 3rem;
+}
+
+.newsletter__subheading {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter__wrapper .newsletter-form__field-wrapper {
+  max-width: 48rem;
+}
+
+.newsletter-form__field-wrapper .newsletter-form__message {
+  margin-top: 1.5rem;
+}
+
+.newsletter__button {
+  margin-top: 3rem;
+  width: fit-content;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter__button {
+    flex-shrink: 0;
+    margin: 0 0 0 1rem;
+  }
+}

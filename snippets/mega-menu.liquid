@@ -1,0 +1,28 @@
+<div class="header__mega-menu-wrapper">
+    <ul class="list-menu" role="list">
+        {%- for link in linkList.links -%}
+        <li>
+            <a href="{{ link.url }}" class="link-item{% if link.current %} active-page{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                {%- if link.type contains 'collection' or link.type contains 'product' -%}
+                    {%- if link.object.featured_image -%}
+                        {{ link.object.featured_image | image_url: width: 120 | image_tag }}
+                    {%- endif -%}
+                {%- endif -%}
+                {{ link.title | escape }}
+            </a>
+        </li>
+        {%- endfor -%}
+    </ul>
+    {% comment %} {%- if image -%}
+        <div class="media-link-wrapper">
+            {%- if link -%}
+                <a href="{{ link }}"></a> 
+            {%- endif -%}
+            {{ image | image_url: width: 480 | image_tag }}
+            {%- if title -%}
+                <span>{{ title }}</span>
+            {%- endif -%}
+            {% render 'icon-line-snake' %}
+        </div>
+    {%- endif -%} {% endcomment %}
+</div>

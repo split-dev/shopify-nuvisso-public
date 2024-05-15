@@ -1,0 +1,145 @@
+{{ 'instagram-feed.out.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+.section--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mob | append: 'px' }};
+    padding-bottom: {{ section.settings.padding_bottom_mob | append: 'px' }};
+}
+@media (min-width: 750px) {
+    .section--{{ section.id }} {
+        padding-top: {{ section.settings.padding_top | append: 'px' }};
+        padding-bottom: {{ section.settings.padding_bottom | append: 'px' }};
+    }
+}
+{%- endstyle -%}
+
+<div class="instafeed section--{{ section.id }} color-{{ section.settings.color_scheme }}">
+    <div class="page-width page-width--not-extra-large">
+        {%- if section.settings.text -%}
+            <div class="instafeed__heading text-{{ section.settings.text_align }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">{{ section.settings.text }}</div>
+        {%- endif -%}
+        <div id="insta-feed"></div>
+        {%- if section.settings.btn_label -%}
+            <div class="instafeed__btn-container text-{{ section.settings.text_align }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                {%- if section.settings.btn_caption -%}
+                    <span class="btn-caption">{{ section.settings.btn_caption }}</span>
+                {%- endif -%}
+                <a href="{{ section.settings.btn_link }}" target="_blank" class="btn">{{ section.settings.btn_label }}{% render 'icon-arrow-right' %}</a>
+            </div>
+        {%- endif -%}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Instagram feed",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text align",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "background-1"
+        },
+        {
+            "type": "header",
+            "content": "Button settings"
+        },
+        {
+            "type": "text",
+            "id": "btn_caption",
+            "label": "Button caption",
+            "default": "Caption"
+        },
+        {
+            "type": "text",
+            "id": "btn_label",
+            "label": "Button label",
+            "default": "Button label"
+        },
+        {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button link"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 150,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 62
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 150,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 62
+        },
+        {
+            "type": "header",
+            "content": "Mobile section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 150,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 34
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 150,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 34
+        }
+    ],
+    "presets": [
+        {
+            "name": "Instagram feed",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}

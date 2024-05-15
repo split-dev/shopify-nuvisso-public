@@ -1,0 +1,53 @@
+@import "./variables";
+@import "./bootstrap";
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: var(--buttons-radius);
+    font-size: 1.2rem;
+    letter-spacing: 0.18rem;
+    font-family: var(--font-custom-casual);
+    text-transform: uppercase;
+    padding: 2px 2.5rem 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(var(--color-button-text));
+    transition: var(--duration-default) ease;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: rgb(var(--color-button));
+    min-height: 4.4rem;
+    max-width: 38rem;
+    width: 100%;
+    @include media-breakpoint-up(sm) {
+        width: auto;
+    }
+    @include media-breakpoint-up(xxl) {
+        font-size: 1.6rem;
+    }
+    &:hover {
+        color: rgb(var(--color-button));
+        background-color: rgb(var(--color-button-text));
+        .icon-arrow-right {
+            transform: translateX(5px);
+        }
+    }
+    &--transparent {
+        border: 1px solid rgb(var(--color-button));
+        background-color: transparent;
+        color: rgb(var(--color-button));
+        &:hover {
+            color: rgb(var(--color-button-text));
+            background-color: rgb(var(--color-button));
+        }
+    }
+    .icon-arrow-right {
+        width: 15px;
+        height: auto;
+        margin-left: 25px;
+        transition: var(--duration-default) ease;
+    }
+}

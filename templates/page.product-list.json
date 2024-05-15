@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-list",
+      "blocks": {
+        "b5739cd1-91cb-4e87-86ec-7ee11ae352d5": {
+          "type": "product",
+          "settings": {
+            "product": "assiduous",
+            "title": "",
+            "text": "",
+            "btn_label": "Details"
+          }
+        },
+        "8949c586-2b83-40b8-a190-2bdaa097e2cf": {
+          "type": "product",
+          "settings": {
+            "product": "peak-guard",
+            "title": "",
+            "text": "",
+            "btn_label": "Details"
+          }
+        },
+        "49108881-2a3d-45c3-af12-eaa142b924af": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "clarity",
+            "title": "",
+            "text": "",
+            "btn_label": "Details"
+          }
+        },
+        "ff295d42-23c2-44d2-af3b-19f5a63c0b3a": {
+          "type": "product",
+          "settings": {
+            "product": "acuto",
+            "title": "",
+            "text": "",
+            "btn_label": "Details"
+          }
+        },
+        "53d40a38-50ac-412c-a162-b4f59eeb436e": {
+          "type": "product",
+          "settings": {
+            "product": "soigne",
+            "title": "",
+            "text": "",
+            "btn_label": "Details"
+          }
+        },
+        "e21ee3fe-436a-4843-8b6e-2eee6d413378": {
+          "type": "product",
+          "settings": {
+            "product": "sparkora",
+            "title": "",
+            "text": "",
+            "btn_label": "Details"
+          }
+        }
+      },
+      "block_order": [
+        "b5739cd1-91cb-4e87-86ec-7ee11ae352d5",
+        "8949c586-2b83-40b8-a190-2bdaa097e2cf",
+        "49108881-2a3d-45c3-af12-eaa142b924af",
+        "ff295d42-23c2-44d2-af3b-19f5a63c0b3a",
+        "53d40a38-50ac-412c-a162-b4f59eeb436e",
+        "e21ee3fe-436a-4843-8b6e-2eee6d413378"
+      ],
+      "settings": {
+        "use_wave": false,
+        "color_scheme": "background-1",
+        "vertical_alignment": "center",
+        "horizontal_alignment": "start",
+        "text_align": "left",
+        "padding_top": 90,
+        "padding_bottom": 100,
+        "padding_top_mob": 60,
+        "padding_bottom_mob": 60
+      }
+    },
+    "1691500681649be5b6": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1691500681649be5b6"
+  ]
+}

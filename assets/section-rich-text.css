@@ -1,0 +1,121 @@
+.rich-text {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.rich-text .icon-line-snake {     
+  position: absolute;
+  height: 60px;
+  width: auto;
+  transform: scaleX(-1);
+  left: 50%;
+  margin-top: 1rem;
+}
+
+.rich-text .icon-line-snake path:nth-of-type(1) {
+  color: rgb(var(--color-highlighted-elements));
+}
+
+.rich-text .icon-line-snake path:nth-of-type(2),
+.rich-text .icon-line-snake path:nth-of-type(3) {
+  color: rgb(var(--color-highlighted-text));
+}
+
+@media screen and (min-width: 1200px) {
+  .rich-text .icon-line-snake {     
+    height: 120px;
+  }
+}
+
+.rich-text p {
+  margin-top: 0.8rem;
+}
+
+.rich-text__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.rich-text:not(.rich-text--full-width) .rich-text__wrapper {
+  margin: auto;
+  width: calc(100% - 8rem / var(--font-body-scale));
+}
+
+.rich-text__blocks {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .rich-text__wrapper {
+    width: 100%;
+  }
+
+  .rich-text__wrapper--left {
+    justify-content: flex-start;
+  }
+
+  .rich-text__wrapper--right {
+    justify-content: flex-end;
+  }
+
+  .rich-text__blocks {
+    max-width: 50rem;
+  }
+}
+
+@media screen and (max-width: 990px) {
+	.rich-text__heading {
+	font-size: 21px;
+  }
+}
+@media screen and (min-width: 990px) {
+  .rich-text__blocks {
+    max-width: 78rem;
+  }
+}
+
+.rich-text__blocks * {
+  overflow-wrap: break-word;
+}
+
+.rich-text__blocks > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.rich-text__blocks > * + * {
+  margin-top: 2rem;
+}
+
+.rich-text__blocks > * + a {
+  margin-top: 3rem;
+}
+
+.rich-text__buttons {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 45rem;
+  word-break: break-word;
+}
+
+.rich-text__buttons--multiple > * {
+  flex-grow: 1;
+  min-width: 22rem;
+}
+
+.rich-text__buttons + .rich-text__buttons {
+  margin-top: 1rem;
+}
+
+.rich-text__blocks.left .rich-text__buttons {
+  justify-content: flex-start;
+}
+
+.rich-text__blocks.right .rich-text__buttons {
+  justify-content: flex-end;
+}

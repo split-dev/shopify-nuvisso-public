@@ -1,0 +1,645 @@
+{{ 'customizer.out.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #customizer--{{ section.id }} .custom--image.center{
+    width: {{ bs.img_width_center }}px;
+    height: {{ bs.img_width_center }}px;
+  }
+
+  #customizer--{{ section.id }} .custom--image.down{
+    width: {{ bs.img_width_down }}px;
+    height: {{ bs.img_width_down }}px;
+  }
+
+  #customizer--{{ section.id }} .custom--text.center{
+    font-size: {{ bs.font_size_center }}px !important;
+  }
+
+  #customizer--{{ section.id }} .custom--text.center.plus-image{
+    margin-bottom: {{ bs.font_position_center }}px !important;
+  }
+
+  #customizer--{{ section.id }} .custom--text.down{
+    font-size: {{ bs.font_size_down }}px !important;
+    top: {{ -65 | minus: bs.font_position_down }}px !important;
+  }
+
+  #customizer--{{ section.id }} .custom--image.center{
+    top: {{ bs.image_position_center }}% !important;
+  }
+
+  #customizer--{{ section.id }} .custom--image.down{
+    bottom: {{ bs.image_position_down }}% !important;
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign sides = product.metafields.custom.customizer_sizes.value
+  assign images_bundles = shop.metaobjects.customizer_images_group['customizer-images-group-ixqpebzg'].images_bungle.value
+  assign decorate_product = all_products['custom-decorations']
+  assign decorate_product_image = all_products['custom-decoration-image']
+  assign decorate_product_all = all_products['text-image']
+-%}
+
+{%- capture additional_inputs -%}
+  <input id="font-name" type="hidden" name="properties[Font]">
+  <input id="text-content" type="hidden" name="properties[Text]">
+  <input id="text-position" type="hidden" name="properties[Text position]">
+  <input id="image-position" type="hidden" name="properties[Image position]">
+  <input id="image-name" type="hidden" name="properties[Image]">
+  <input id="side" type="hidden" name="properties[Side]">
+  {% comment %} <input type="file" accept="image/*" name="properties[Image]"> {% endcomment %}
+{%- endcapture -%}
+
+<div class="customizer__container " id="customizer--{{ section.id }}">
+  <details class="customizer">
+    <summary class="customizer__head">
+      <span> Customizer </span>
+      {% render 'icon-caret' %}
+    </summary>
+
+    <div class="customizer__mobile--image">
+      <div class="custom--elems__container">
+        {% render 'customizer-sides' %}
+
+        <span class="custom--text down"></span>
+        <span class="custom--image center">
+          <img
+            src=""
+            alt="custom img"
+            width=""
+            height=""
+            loading="lazy"
+          >
+        </span>
+        {% comment %}
+          <div class="custom--elems__position">
+          </div>
+        {% endcomment %}
+      </div>
+    </div>
+
+    <div class="swiper">
+      <ul class="customizer__box swiper-wrapper main-carousel">
+        <li class="customizer__page swiper-slide carousel-cell">
+          <nav class="customizer__start-nav-buttons">
+            <button
+              class="customizer__option-button"
+              data-page="1"
+              data-group="text"
+            >
+              {%- if bs.text_option != blank -%}
+                {{ bs.text_option }}
+              {%- else -%}
+                Only text ({{ decorate_product.price | money }})
+              {%- endif -%}
+            </button>
+            <button
+              class="customizer__option-button"
+              data-page="2"
+              data-group="images"
+            >
+              {%- if bs.image_option != blank -%}
+                {{ bs.image_option }}
+              {%- else -%}
+                Only image ({{ decorate_product_image.price | money }})
+              {%- endif -%}
+            </button>
+            <button
+              class="customizer__option-button"
+              data-page="1"
+              data-group="images-text"
+            >
+              {%- if bs.couple_option != blank -%}
+                {{ bs.couple_option }}
+              {%- else -%}
+                Text + Image ({{ decorate_product_all.price | money }})
+              {%- endif -%}
+            </button>
+          </nav>
+        </li>
+
+        <li class="customizer__page swiper-slide carousel-cell">
+          <button class="customizer__reset-btn">Start over</button>
+
+          <span class="">Select layout</span>
+          <ul class="select-layout__list">
+            {% for side in sides %}
+              <li>
+                <button
+                  class="select-layout__item text {% if forloop.first %}current{% endif %}"
+                  data-side="{{ side | remove: " side" | downcase }}"
+                >
+                  {% render 'approve-icon', class: 'visually-hidden' %}
+                  {% render 'bottle-icon' %}
+                  <span> {{ side }} </span>
+                </button>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <div class="customizer__text--container">
+            <span class="customizer__text--info"> Enter you text Below. </span>
+            <textarea
+              class="customizer__text--input"
+              placeholder="Add text here"
+              name="bottle-text"
+              id="customizer__text--input"
+              maxlength="12"
+            ></textarea>
+            <span class="customizer__text--clear">Clear</span>
+          </div>
+
+          {%- if bs.toggle_handle -%}
+            <fieldset class="customizer__position--thumb text">
+              <label class="customizer__position--checkbox__label">
+                <input
+                  type="checkbox"
+                  id="text-position"
+                  class="visually-hidden"
+                  checked
+                >
+                Toggle text position
+              </label>
+
+              <label class="customizer__position--label visually-hidden">
+                <input
+                  type="radio"
+                  name="text-position"
+                  value="center"
+                  class="customizer__position--input visually-hidden"
+                  checked
+                >
+                Vertical
+              </label>
+
+              <label class="customizer__position--label visually-hidden">
+                <input
+                  type="radio"
+                  name="text-position"
+                  value="down"
+                  class="customizer__position--input visually-hidden"
+                >
+                Down
+              </label>
+            </fieldset>
+          {%- endif -%}
+
+          <div class="customizer__font--changer">
+            {% comment %} <span class="customizer__font--changer__sign">Select font Size</span> {% endcomment %}
+            <ul
+              id="customizer__font-pickers"
+              class="customizer__font-pickers"
+            ></ul>
+          </div>
+
+          <div class="customizer__text-page__steps">
+            <button class="customizer__next-button" disabled>Next step: add image</button>
+
+            <div class="text_buy_block" style="margin-top: 10px">
+              <div>
+                {% if notes != blank %}
+                  <div class="note">
+                    {{ notes }}
+                  </div>
+                {% endif %}
+
+                <label>
+                  <input type="checkbox" name="accept">
+                  i accept the terms
+                </label>
+
+                <p class="buy-button__total">
+                  <span> Bottle price: {{ product.price | money }} </span>
+                  <span> Decoration price: {{ decorate_product.price | money }} </span>
+                  <span class="buy-button__price"
+                    >Total: {{ product.price | plus: decorate_product.price | money -}}
+                  </span>
+                </p>
+              </div>
+
+              {%- render 'buy-buttons',
+                block: block,
+                product: product,
+                product_form_id: product_form_id,
+                section_id: section.id,
+                show_pickup_availability: true,
+                additional_product: decorate_product,
+                additional_product_qty: 1,
+                custom_class: 'customizer__buy-button text',
+                box_class: 'customizer__buy-btn',
+                disabled: true,
+                additional_field: additional_inputs
+              -%}
+
+              <div style="text-align: center;">
+                {{ bs.comment }}
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="customizer__page swiper-slide carousel-cell">
+          <button class="customizer__reset-btn">Start over</button>
+
+          <div class="customizer__nav-btn__box">
+            <button class="customizer__nav--btn customizer__back--btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                style="transform: rotate(180deg)"
+              >
+                <path d="M6 3L11 8L6 13" stroke="#0D3C61" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Back
+            </button>
+          </div>
+
+          <span class="images-select">Select Image Side</span>
+          <ul class="select-layout__list images-select">
+            {% for side in sides %}
+              <li>
+                <button
+                  class="select-layout__item picture {% if forloop.first %}current{% endif %}"
+                  data-side="{{ side | remove: " side" | downcase }}"
+                >
+                  {% render 'approve-icon', class: 'visually-hidden' %}
+                  {% render 'bottle-icon' %}
+                  <span> {{ side }} </span>
+                </button>
+              </li>
+            {% endfor %}
+          </ul>
+
+          {%- if bs.toggle_handle -%}
+            <fieldset class="customizer__position--thumb image">
+              <label class="customizer__position--checkbox__label">
+                <input
+                  type="checkbox"
+                  id="customizer__position--checkbox"
+                  class="visually-hidden"
+                  checked
+                >
+                Toggle image position
+              </label>
+
+              <label class="customizer__position--label visually-hidden">
+                <input
+                  type="radio"
+                  name="img-position"
+                  value="center"
+                  class="customizer__position--input visually-hidden"
+                >
+                Center
+              </label>
+
+              <label class="customizer__position--label visually-hidden">
+                <input
+                  type="radio"
+                  name="img-position"
+                  value="down"
+                  class="customizer__position--input visually-hidden"
+                  checked
+                >
+                Down
+              </label>
+            </fieldset>
+          {%- endif -%}
+
+          <span>Select add option:</span>
+          <div class="customizer__image--options">
+            {% if show_custom_img == true %}
+              <details class="customizer__image--option">
+                <summary class="customizer__image--option__head" data-group="own">
+                  <span> Upload own image </span>
+
+                  <div class="customizer__image--option__head--logo">
+                    <div class="customizer__image--option__img">
+                      <img
+                        src="https://cdn.shopify.com/s/files/1/0749/1344/8220/files/Frame_42.jpg?v=1707125628"
+                        alt="own image option logo"
+                        width=""
+                        height=""
+                        loading="lazy"
+                      >
+                    </div>
+
+                    {%- render 'icons', icon: 'arrow-right' -%}
+                  </div>
+                </summary>
+
+                <div
+                  class="customizer__images--list"
+                  data-group="own"
+                >
+                  <ul class="customizer__images--policy__rules">
+                    <li class="customizer__images--policy__rule">
+                      {% render 'icons', icon: 'pickture' %}
+                      <span>Not more than 300px (W or H)</span>
+                    </li>
+                    <li class="customizer__images--policy__rule">
+                      {% render 'icons', icon: 'nophoto' %}
+                      <span>No photos</span>
+                    </li>
+                    <li class="customizer__images--policy__rule">
+                      {% render 'icons', icon: 'notm' %}
+                      <span>No trademark </span>
+                    </li>
+                    <li class="customizer__images--policy__rule">
+                      {% render 'icons', icon: 'nocopiwright' %}
+                      <span>No copyright </span>
+                    </li>
+                  </ul>
+
+                  <label
+                    class="customizer__image--upload__label"
+                    for="image-downloader"
+                  >
+                    {%- render 'icon-cloud' -%}
+                    Upload
+
+                    <input
+                      class="customizer__image--upload"
+                      id="image-downloader"
+                      type="file"
+                      accept="image/jpg, image/png, image/png, image/svg, image/webp"
+                    >
+                  </label>
+                  <p class="customizer__image--upload__sign">Accept file types: <span>PNG, JPG, SVG, WEBP</span></p>
+
+                  <div class="customizer__custom-image__info">
+                    <span>Custom Order Policy</span>
+
+                    <p>Double check your proof: check for stray marks or dots and crop these out.</p>
+
+                    <p>
+                      For the best results using a sketch, start with blank white paper and a thick dark market. Stick
+                      to a simple design, and take a photo in a well-lit area without flash.
+                    </p>
+
+                    <p>
+                      For more details, please visit our Custom FAQ. For corporate logos, please check our Corporate
+                      Sales Page.
+                    </p>
+                  </div>
+                </div>
+              </details>
+            {% endif %}
+
+            {% for bundle in images_bundles %}
+              <details class="customizer__image--option">
+                <summary
+                  class="customizer__image--option__head"
+                  data-group="{{ bundle.title }}"
+                >
+                  <span>
+                    {{ bundle.title }}
+                  </span>
+
+                  <div class="customizer__image--option__head--logo">
+                    <div class="customizer__image--option__img">
+                      <img
+                        src="{{ bundle.logo | image_url: width: 80 }}"
+                        alt="{{ bundle.logo.alt | default: "Options image" }}"
+                        width=""
+                        height=""
+                        loading="lazy"
+                      >
+                    </div>
+
+                    {%- render 'icons', icon: 'arrow-right' -%}
+                  </div>
+                </summary>
+
+                <ul
+                  class="customizer__images--list"
+                  data-group="{{ bundle.title }}"
+                >
+                  {% for image in bundle.image_list.value %}
+                    <li class="customizer__images--item">
+                      <img
+                        src="{{ image | image_url: width: 300 }}"
+                        alt="{{ image.alt | default: "Options image" }}"
+                        width=""
+                        height=""
+                        loading="lazy"
+                      >
+                    </li>
+                  {% endfor %}
+                </ul>
+              </details>
+            {% endfor %}
+          </div>
+
+          <div class="image_buy_block">
+            <div>
+              {% if notes != blank %}
+                <div class="note">
+                  {{ notes }}
+                </div>
+              {% endif %}
+
+              <label>
+                <input type="checkbox" name="accept">
+                i accept the terms
+              </label>
+
+              <p class="buy-button__total">
+                <span> Bottle price: {{ product.price | money }} </span>
+                <span class="decorate--img"> Decoration price: {{ decorate_product_image.price | money }} </span>
+                <span class="buy-button__price decorate--img">
+                  Total: {{ product.price | plus: decorate_product_image.price | money -}}
+                </span>
+
+                <span class="decorate--couple"> Decoration price: {{ decorate_product_all.price | money }} </span>
+                <span class="buy-button__price decorate--couple">
+                  Total: {{ product.price | plus: decorate_product_all.price | money -}}
+                </span>
+              </p>
+            </div>
+
+            {%- render 'buy-buttons',
+              block: block,
+              product: product,
+              product_form_id: product_form_id,
+              section_id: section.id,
+              show_pickup_availability: true,
+              additional_product: decorate_product_image,
+              additional_product_qty: 1,
+              custom_class: 'customizer__buy-button second',
+              box_class: 'customizer__buy-btn__image',
+              additional_field: additional_inputs,
+              disabled: true
+            -%}
+
+            {%- render 'buy-buttons',
+              block: block,
+              product: product,
+              product_form_id: product_form_id,
+              section_id: section.id,
+              show_pickup_availability: true,
+              additional_product: decorate_product_all,
+              additional_product_qty: 1,
+              custom_class: 'customizer__buy-button second all',
+              box_class: 'customizer__buy-btn__all',
+              additional_field: additional_inputs,
+              disabled: true
+            -%}
+
+            <div style="text-align: center;">
+              {{ bs.comment }}
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </details>
+</div>
+
+<script>
+  const btnBox = document.querySelector('.customizer__text-page__steps');
+  const textNextBtn = btnBox.querySelector('.customizer__next-button');
+  const textBuyBtn = btnBox.querySelector('.customizer__buy-button.text');
+  const textBuyBlock = btnBox.querySelector('.text_buy_block');
+  const imageNav = document.querySelector('.customizer__nav-btn__box');
+  const imagesSelect = document.querySelectorAll('.images-select');
+  const imgBuyBlock = document.querySelector('.customizer__buy-btn__image');
+  const allBuyBlock = document.querySelector('.customizer__buy-btn__all');
+  const imgTotalPrice = document.querySelectorAll('.decorate--img');
+  const coupleTotalPrice = document.querySelectorAll('.decorate--couple');
+
+  function onSkipClick(slider) {
+    const skipBtnElems = document.querySelectorAll('.customizer__skip--btn');
+
+    if ([...skipBtnElems].length > 0) {
+      [...skipBtnElems].forEach((btn) => {
+        btn.addEventListener('click', () => {
+          slider.slideTo(3);
+        });
+      });
+    }
+  }
+
+  function onBackClick(slider) {
+    const backBtnElems = document.querySelectorAll('.customizer__back--btn');
+
+    if ([...backBtnElems].length > 0) {
+      [...backBtnElems].forEach((btn) => {
+        btn.addEventListener('click', () => {
+          slider.slidePrev();
+        });
+      });
+    }
+  }
+
+  function onNextClick(slider) {
+    const nextBtnElems = document.querySelectorAll('.customizer__next-button');
+
+    if ([...nextBtnElems].length > 0) {
+      [...nextBtnElems].forEach((btn) => {
+        btn.addEventListener('click', () => {
+          slider.slideNext();
+        });
+      });
+    }
+  }
+
+  function onCustomizerOptionButton(slider) {
+    const optionButtons = document.querySelectorAll('.customizer__option-button');
+
+    [...optionButtons].forEach((btn) => {
+      const pageIdx = btn.getAttribute('data-page');
+      const group = btn.getAttribute('data-group');
+
+      btn.addEventListener('click', () => {
+        slider.slideTo(Number(pageIdx));
+
+        if (group === 'text') {
+          textNextBtn.classList.add('visually-hidden');
+        } else if (group === 'images') {
+          imageNav.classList.add('visually-hidden');
+          allBuyBlock.classList.add('visually-hidden');
+
+          [...coupleTotalPrice].forEach((elem) => {
+            elem.classList.add('visually-hidden');
+          });
+        } else if (group === 'images-text') {
+          //textBuyBtn.classList.add('visually-hidden');
+          textBuyBlock.classList.add('visually-hidden');
+          imgBuyBlock.classList.add('visually-hidden');
+
+          [...imgTotalPrice].forEach((elem) => {
+            elem.classList.add('visually-hidden');
+          });
+
+          [...imagesSelect].forEach((elem) => {
+            elem.classList.add('visually-hidden');
+          });
+        }
+      });
+    });
+  }
+
+  {% comment %} function watchActiveIndex(slider) {
+    const paginationIndicators = document.querySelectorAll('.customizer__progress li');
+
+    slider.on('slideChange', function () {
+      [...paginationIndicators].forEach((li, idx) => {
+        idx === slider.activeIndex ? li.classList.add('current') : li.classList.remove('current');
+      });
+    });
+  } {% endcomment %}
+
+  function resetButtnon(slider) {
+    const resetBtns = document.querySelectorAll('.customizer__reset-btn');
+
+    [...resetBtns].forEach((btn) => {
+      btn.addEventListener('click', () => {
+        slider.slideTo(0);
+
+        textNextBtn.classList.remove('visually-hidden');
+        textBuyBtn.classList.remove('visually-hidden');
+        imageNav.classList.remove('visually-hidden');
+        [...imagesSelect].forEach((elem) => {
+          elem.classList.remove('visually-hidden');
+        });
+
+        [...coupleTotalPrice].forEach((elem) => {
+          elem.classList.remove('visually-hidden');
+        });
+
+        [...imgTotalPrice].forEach((elem) => {
+          elem.classList.remove('visually-hidden');
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    function initMediaCarousel() {
+      const slider = new Swiper('.swiper', {
+        slidesPerView: 1,
+        speed: 400,
+        autoHeight: true,
+        allowTouchMove: false,
+      });
+
+      onSkipClick(slider);
+      onBackClick(slider);
+      onNextClick(slider);
+      onCustomizerOptionButton(slider);
+      resetButtnon(slider);
+    }
+    if (Shopify.designMode) {
+      initMediaCarousel();
+      document.addEventListener('shopify:section:load', function (e) {
+        initMediaCarousel();
+      });
+    } else {
+      initMediaCarousel();
+    }
+  });
+</script>

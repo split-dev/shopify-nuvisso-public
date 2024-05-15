@@ -1,0 +1,74 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text_usd": "Free shipping on all orders above $60",
+            "text_sar": "Free shipping on all orders above 150sr",
+            "link_usd": "shopify:\/\/collections\/all",
+            "link_sar": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "custom_css": [
+        ".announcement-bar__message {color: rgb(var(--color-button));}"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "show_line_separator": false,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "5d8d6826-cbc8-44b6-86a8-dbafe533563e": {
+          "type": "mega_menu",
+          "settings": {
+            "mega_menu_position": 2,
+            "menu": "prouducts-mega-menu",
+            "image": "shopify:\/\/shop_images\/world-better-place.jpg",
+            "link": "shopify:\/\/pages\/contact",
+            "title": "Making the world A BETTER PLACE",
+            "menu_color_scheme": "background-2"
+          }
+        }
+      },
+      "block_order": [
+        "5d8d6826-cbc8-44b6-86a8-dbafe533563e"
+      ],
+      "settings": {
+        "transparent_template_names": "index",
+        "transparent_template_suffixes": "",
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "background-1",
+        "menu_color_scheme": "accent-2",
+        "mobile_search_color_scheme": "",
+        "enable_country_selector": true,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

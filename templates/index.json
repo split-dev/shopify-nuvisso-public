@@ -1,0 +1,365 @@
+{
+  "sections": {
+    "74f73755-b4b2-4ad7-855c-1eb1374ade04": {
+      "type": "adaptive-banner",
+      "blocks": {
+        "850f2c87-f678-4071-bcc1-2e45c27279a0": {
+          "type": "description",
+          "settings": {
+            "description": "<h1>Born from a desire to<\/h1><h1>make a <strong>HIGH-QUALITY, SUSTAINABLE BOTTLE<\/strong><\/h1><h1><em>for everyone.<\/em><\/h1>",
+            "desctiption_mb_desk": 30,
+            "desctiption_mb_mob": 60
+          }
+        },
+        "e6e0a6a0-060d-40c4-aeb4-5c2c16253add": {
+          "type": "button",
+          "settings": {
+            "btn_name": "Shop products",
+            "btn_link": "",
+            "button_mb_desk": 0,
+            "button_mb_mob": 0
+          }
+        }
+      },
+      "block_order": [
+        "850f2c87-f678-4071-bcc1-2e45c27279a0",
+        "e6e0a6a0-060d-40c4-aeb4-5c2c16253add"
+      ],
+      "custom_css": [
+        "h1:last-of-type {text-align: right;}",
+        ".btn {float: right;}"
+      ],
+      "settings": {
+        "section_link": "\/pages\/products",
+        "image": "shopify:\/\/shop_images\/Frame_3_8096890b-c206-4935-a9e9-a00054207d92.png",
+        "image_mobile": "shopify:\/\/shop_images\/1nuvisso-hero-banner-mobile_eb8ffc6e-edff-4de8-8482-5a5b5d39997f.png",
+        "image_lazy": false,
+        "image_as_background": true,
+        "image_height_auto": false,
+        "image_height_desktop": 90,
+        "image_max_height_desktop": 800,
+        "image_height_mobile": 180,
+        "image_max_height_mobile": 750,
+        "fit_to_container": "none",
+        "color_scheme": "",
+        "bg": "",
+        "bg_blur": 0,
+        "vertical_alignment": "start",
+        "horizontal_alignment": "center",
+        "text_align": "left",
+        "max_width": 580,
+        "max_width_tablet": 65,
+        "max_width_small_tablet": 60,
+        "content_space_between": false,
+        "padding_top": 180,
+        "padding_bottom": 106,
+        "padding_top_mob": 110,
+        "padding_bottom_mob": 80
+      }
+    },
+    "23fbab40-514e-4cf3-80cb-4226e0abac98": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--20015217869084__23fbab40-514e-4cf3-80cb-4226e0abac98-column-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-fox.svg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--20015217869084__23fbab40-514e-4cf3-80cb-4226e0abac98-column-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-usa-today.svg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--20015217869084__23fbab40-514e-4cf3-80cb-4226e0abac98-column-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-digital-journal.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "2507bd4f-e881-4514-bafb-f01d9bcfd899": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-benzinga.svg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "a0157d7d-10e7-4d58-9b7e-cd1b161dacc1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-ncn.svg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20015217869084__23fbab40-514e-4cf3-80cb-4226e0abac98-column-1",
+        "template--20015217869084__23fbab40-514e-4cf3-80cb-4226e0abac98-column-2",
+        "template--20015217869084__23fbab40-514e-4cf3-80cb-4226e0abac98-column-3",
+        "2507bd4f-e881-4514-bafb-f01d9bcfd899",
+        "a0157d7d-10e7-4d58-9b7e-cd1b161dacc1"
+      ],
+      "disabled": true,
+      "settings": {
+        "icons_mode": true,
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 5,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "High-quality materials that keep your drinks cold for up to 24 hours.",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-2",
+        "full_width": true,
+        "use_bg_icon": false,
+        "padding_top": 88,
+        "padding_bottom": 62,
+        "padding_top_mob": 60,
+        "padding_bottom_mob": 26
+      }
+    },
+    "122e38fc-b4eb-4c08-a609-5ecd15a57f8d": {
+      "type": "adaptive-banner",
+      "settings": {
+        "section_link": "",
+        "image": "shopify:\/\/shop_images\/Homeee_8b2038a7-7f7b-42fe-b103-670213430fb4.png",
+        "image_mobile": "shopify:\/\/shop_images\/Group_20_0ee89ecd-5475-4495-9876-824529050220.png",
+        "image_lazy": true,
+        "image_as_background": true,
+        "image_height_auto": true,
+        "image_height_desktop": 47,
+        "image_max_height_desktop": 1000,
+        "image_height_mobile": 110,
+        "image_max_height_mobile": 800,
+        "fit_to_container": "all",
+        "color_scheme": "background-2",
+        "bg": "",
+        "bg_blur": 0,
+        "vertical_alignment": "center",
+        "horizontal_alignment": "center",
+        "text_align": "center",
+        "max_width": 800,
+        "max_width_tablet": 100,
+        "max_width_small_tablet": 100,
+        "content_space_between": false,
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 60
+      }
+    },
+    "9f019010-fd4c-472a-a1a7-cfb65fa99e7d": {
+      "type": "split-banner-info",
+      "blocks": {
+        "template--20015217869084__9f019010-fd4c-472a-a1a7-cfb65fa99e7d-description-1": {
+          "type": "description",
+          "settings": {
+            "description": "<h2>We believe <strong>PREMIUM BOTTLES<\/strong> are a necessity for sustainability and should be available <em>to everyone<\/em><\/h2>",
+            "desctiption_mb_desk": 70,
+            "desctiption_mb_mob": 50
+          }
+        },
+        "template--20015217869084__9f019010-fd4c-472a-a1a7-cfb65fa99e7d-button-1": {
+          "type": "button",
+          "settings": {
+            "btn_name": "About us",
+            "btn_link": "shopify:\/\/pages\/hello",
+            "button_mb_desk": 24,
+            "button_mb_mob": 16
+          }
+        }
+      },
+      "block_order": [
+        "template--20015217869084__9f019010-fd4c-472a-a1a7-cfb65fa99e7d-description-1",
+        "template--20015217869084__9f019010-fd4c-472a-a1a7-cfb65fa99e7d-button-1"
+      ],
+      "settings": {
+        "desktop_reverse": false,
+        "image": "shopify:\/\/shop_images\/1111111111_2_1_3_3114e965-ca35-40fb-acad-c0b67135a09c.png",
+        "image_lazy": true,
+        "image_height_desktop": 68,
+        "image_max_height_desktop": 830,
+        "image_height_mobile": 144,
+        "image_max_height_mobile": 740,
+        "color_scheme": "inverse",
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Sustainable and clean.",
+        "heading_size": "h2",
+        "description": "<p>Which collection will you choose?<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "frontpage",
+        "products_to_show": 6,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "show_always_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "slider_visual": "dots",
+        "show_slider_buttons": false,
+        "color_scheme": "scheme-9963b173-4265-4964-9f74-d03a11288140",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mob": 80,
+        "padding_bottom_mob": 80
+      }
+    },
+    "12e9d63a-e051-4fef-9097-686df110aeae": {
+      "type": "split-banner-info",
+      "blocks": {
+        "template--20015217869084__12e9d63a-e051-4fef-9097-686df110aeae-description-1": {
+          "type": "description",
+          "settings": {
+            "description": "<h2>A portion of profits are donated to organizations dedicated to making <strong>THE WORLD A BETTER PLACE<\/strong> <em>for everyone<\/em><\/h2>",
+            "desctiption_mb_desk": 70,
+            "desctiption_mb_mob": 50
+          }
+        },
+        "template--20015217869084__12e9d63a-e051-4fef-9097-686df110aeae-button-1": {
+          "type": "button",
+          "settings": {
+            "btn_name": "Know more",
+            "btn_link": "shopify:\/\/pages\/our-story",
+            "button_mb_desk": 24,
+            "button_mb_mob": 16
+          }
+        }
+      },
+      "block_order": [
+        "template--20015217869084__12e9d63a-e051-4fef-9097-686df110aeae-description-1",
+        "template--20015217869084__12e9d63a-e051-4fef-9097-686df110aeae-button-1"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 em {font-size: 62px;}"
+      ],
+      "settings": {
+        "desktop_reverse": true,
+        "image": "shopify:\/\/shop_images\/world-better-place.jpg",
+        "image_lazy": true,
+        "image_height_desktop": 68,
+        "image_max_height_desktop": 830,
+        "image_height_mobile": 130,
+        "image_max_height_mobile": 600,
+        "color_scheme": "inverse",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 32
+      }
+    },
+    "16905528239af58656": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "bd2383bf-e5a3-4c06-8ec4-56c6c6d4619e": {
+      "type": "newsletter",
+      "blocks": {
+        "template--21608295727388__bd2383bf-e5a3-4c06-8ec4-56c6c6d4619e-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the mailing list to get first access to new bottles and collections launching soon!",
+            "heading_size": "h2",
+            "text_align": "left"
+          }
+        },
+        "template--21608295727388__bd2383bf-e5a3-4c06-8ec4-56c6c6d4619e-email_form-1": {
+          "type": "email_form",
+          "settings": {
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21608295727388__bd2383bf-e5a3-4c06-8ec4-56c6c6d4619e-heading-1",
+        "template--21608295727388__bd2383bf-e5a3-4c06-8ec4-56c6c6d4619e-email_form-1"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3ecb3db4-5ade-475f-aaef-41705fce9a39",
+        "full_width": false,
+        "image_1": "shopify:\/\/shop_images\/PC-099.png",
+        "image_2": "shopify:\/\/shop_images\/PC-055_4ef2a3ca-9162-45b2-96e1-075d0c802fdc.png",
+        "image_3": "shopify:\/\/shop_images\/PC-22.png",
+        "padding_top": 115,
+        "padding_bottom": 165,
+        "padding_top_mob": 90,
+        "padding_bottom_mob": 215
+      }
+    }
+  },
+  "order": [
+    "74f73755-b4b2-4ad7-855c-1eb1374ade04",
+    "23fbab40-514e-4cf3-80cb-4226e0abac98",
+    "rich_text",
+    "122e38fc-b4eb-4c08-a609-5ecd15a57f8d",
+    "9f019010-fd4c-472a-a1a7-cfb65fa99e7d",
+    "featured_collection",
+    "12e9d63a-e051-4fef-9097-686df110aeae",
+    "16905528239af58656",
+    "bd2383bf-e5a3-4c06-8ec4-56c6c6d4619e"
+  ]
+}

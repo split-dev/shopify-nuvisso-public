@@ -1,0 +1,202 @@
+{{ 'info-tiles.out.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .info-tiles--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mob }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .info-tiles--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- if section.settings.use_wave -%}
+    <div class="wave color-{{ section.settings.color_scheme }}">
+      {%- render 'icon-wave-mobile' -%}
+      {%- render 'icon-wave' -%}
+    </div>
+{%- endif -%}
+
+<div class="info-tiles info-tiles--{{ section.id }} color-{{ section.settings.color_scheme }}">
+    <div class="info-tiles__wrapper page-width">
+        {%- for b in section.blocks -%}
+            <div class="info-tiles__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                <div class="item-text align-items-{{ section.settings.horizontal_alignment }} justify-content-{{ section.settings.vertical_alignment }} text-{{ section.settings.text_align }}">{{ b.settings.text }}</div>
+                <div class="item-image">
+                    {%- if b.settings.image -%}
+                        {{ b.settings.image | image_url: width: 1100 | image_tag:
+                            loading: 'lazy',
+                            class: 'item-image',
+                            widths: '375, 550, 750, 1100' }}
+                    {%- else -%}
+                        {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                </div>
+            </div>
+        {%- endfor -%}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Info tiles",
+    "disabled_on": {
+      "groups": ["header", "footer"]
+    },
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "use_wave",
+            "label": "Use wave",
+            "default": true
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "inverse"
+        },
+        {
+            "type": "header",
+            "content": "Content settings"
+          },
+          {
+            "type": "select",
+            "id": "vertical_alignment",
+            "label": "Vertical alignment",
+            "options": [
+              {
+                "value": "start",
+                "label": "Top"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "end",
+                "label": "Bottom"
+              }
+            ],
+            "default": "center"
+        },
+        {
+            "type": "select",
+            "id": "horizontal_alignment",
+            "label": "Horizontal alignment",
+            "options": [
+              {
+                "value": "start",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "end",
+                "label": "Right"
+              }
+            ],
+            "default": "start"
+        },
+        {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text align",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "left"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 120
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 120
+        },
+        {
+            "type": "header",
+            "content": "Mobile section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top_mob",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_top",
+            "default": 60
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom_mob",
+            "min": 0,
+            "max": 200,
+            "step": 2,
+            "unit": "px",
+            "label": "t:sections.all.padding.padding_bottom",
+            "default": 60
+        }
+    ],
+    "blocks": [
+        {
+            "type": "tile",
+            "name": "Tile",
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "<p>Description</p>"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }                  
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Info tiles",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}

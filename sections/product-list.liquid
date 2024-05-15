@@ -1,0 +1,281 @@
+{{ 'product-list.out.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .product-list--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mob }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .product-list--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- if section.settings.use_wave -%}
+  <div class="wave color-{{ section.settings.color_scheme }}">
+    {%- render 'icon-wave-mobile' -%}
+    {%- render 'icon-wave' -%}
+  </div>
+{%- endif -%}
+
+<div class="product-list product-list--{{ section.id }} color-{{ section.settings.color_scheme }}">
+  <div class="product-list__wrapper page-width">
+    {%- for b in section.blocks -%}
+      <div class="product-list__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <div class="item-text align-items-{{ section.settings.horizontal_alignment }} justify-content-{{ section.settings.vertical_alignment }} text-{{ section.settings.text_align }}">
+          {%- if b.settings.title != blank -%}
+            <h2 class="h1-bold">{{ b.settings.title }}</h2>
+          {%- else -%}
+            <h2 class="h1-bold">{{ b.settings.product.title }}</h2>
+          {%- endif -%}
+          {%- if b.settings.text != blank -%}
+            {{ b.settings.text }}
+          {%- else -%}
+            <p>{{ b.settings.product.description }}</p>
+          {%- endif -%}
+          <div class="price-btn">
+				 {% if b.settings.product.selected_or_first_available_variant.available != true %}
+					<div class="d-flex justify-content-center align-items-center">
+						{%- render 'price', product: b.settings.product, varies_price: b.settings.product.price_varies -%}
+						<div class="prise_sold-out-pink">
+							<span class="ml-4 badge color-inverse">
+								{{- 'products.product.sold_out' | t -}}
+							</span>
+						</div>
+					</div>
+				{% else %}
+					{%- render 'price', product: b.settings.product, varies_price: b.settings.product.price_varies -%}
+				{% endif %}
+					<a href="{{ b.settings.product.url }}" class="btn btn--transparent">{{ b.settings.btn_label }}</a>
+			</div>
+        </div>
+        <div class="item-image">
+          {%- if b.settings.image -%}
+            {{
+              b.settings.image
+              | image_url: width: 1100
+              | image_tag: loading: 'lazy', class: 'item-image', widths: '375, 550, 750, 1100'
+            }}
+          {%- elsif b.settings.product.featured_image -%}
+            {{
+              b.settings.product.featured_image
+              | image_url: width: 1100
+              | image_tag: loading: 'lazy', class: 'item-image', widths: '375, 550, 750, 1100'
+            }}
+          {%- else -%}
+            {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+          <ul class="item-image__tag-list">
+            {% for tag in b.settings.product.tags %}
+              {% if tag != blank %}
+                <li class="item-image__tag-item">
+                  {%- assign tagDowncase = tag | downcase -%}
+                  {%- if tagDowncase contains 'best' -%}
+                    {% render 'icon-star' %}
+                  {%- elsif tagDowncase contains 'most' -%}
+                    {% render 'icon-bolt' %}
+                  {%- else -%}
+                    <span class="dot"></span>
+                  {%- endif -%}
+                  {{ tag | upcase }}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product list",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_wave",
+      "label": "Use wave",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Content settings"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "default": "start"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Mobile section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mob",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mob",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "info": "Use to replace the product title."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "info": "Use to replace the product description."
+        },
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "Button label",
+          "default": "Details"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Use to replace the product image."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product list",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

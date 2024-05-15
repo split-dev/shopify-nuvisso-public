@@ -1,0 +1,91 @@
+@import "./settings/variables";
+@import "./settings/reset";
+@import "./settings/bootstrap";
+@import "./settings/buttons";
+@import "./settings/typography";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wave {
+  position: relative;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  background: none;
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    path {
+      color: rgb(var(--color-background));
+    }
+  }
+  svg.icon-wave-mobile {
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+    & + .icon-wave {
+      display: none;
+      @include media-breakpoint-up(sm) {
+        display: block;
+      }
+    }
+  }
+  &--overlap {
+    svg {
+      margin-top: -7.9vw;
+    }
+    svg.icon-wave-mobile {
+      margin-top: -24.6vw;
+    }
+  }
+}
+.button--pink {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0 2.5rem;
+  cursor: not-allowed;
+  font: inherit;
+  font-family: var(--font-custom-casual);
+  text-decoration: none;
+  color: rgb(var(--color-button-text)) !important;
+  transition: box-shadow var(--duration-short) ease;
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: calc(12rem + var(--buttons-border-width) * 2);
+  min-height: calc(4.2rem + var(--buttons-border-width) * 2);
+  background-color: #ffa3b5;
+  opacity: 1 !important;
+  --shadow-horizontal-offset: var(--buttons-shadow-horizontal-offset);
+  --shadow-vertical-offset: var(--buttons-shadow-vertical-offset);
+  --shadow-blur-radius: var(--buttons-shadow-blur-radius);
+  --shadow-opacity: var(--buttons-shadow-opacity);
+  --shadow-visible: var(--buttons-shadow-visible);
+  --border-offset: var(--buttons-border-offset);
+  border-radius: var(--buttons-radius-outset);
+  position: relative;
+}
+
+@font-face {
+  font-family: "Alternate Gothic";
+  src:
+    url(./alternate_gothic_no2_d.woff) format("woff"),
+    url(./alternate_gothic_no2_d.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Minion Pro";
+  src:
+    url(./MinionPro-Regular.woff) format("woff"),
+    url(./MinionPro-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Anca";
+  src:
+    url(./AnkaCoder-r.woff) format("woff"),
+    url(./AnkaCoder-r.woff2) format("woff2");
+}

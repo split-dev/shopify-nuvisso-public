@@ -1,0 +1,91 @@
+{
+  "sections": {
+    "df789316-4717-4857-9fc8-9c27d4f0b3a0": {
+      "type": "rich-text",
+      "blocks": {
+        "template--20212078903580__df789316-4717-4857-9fc8-9c27d4f0b3a0-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<h1>Hi, we are <strong>NUVISSO<\/strong><\/h1><p>We believes in the power of innovative technology and inspirational design<br\/> to make pristine drinking water easily accessible and sustainable for everyone<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20212078903580__df789316-4717-4857-9fc8-9c27d4f0b3a0-text-1"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-9963b173-4265-4964-9f74-d03a11288140",
+        "full_width": true,
+        "use_bg_icon": true,
+        "padding_top": 110,
+        "padding_bottom": 200,
+        "padding_top_mob": 60,
+        "padding_bottom_mob": 120
+      }
+    },
+    "60cbe497-3b97-4f2a-9615-7eaff7fd182e": {
+      "type": "Info-tiles",
+      "blocks": {
+        "af399e76-a1d2-444a-9170-9f5fd8e3afe3": {
+          "type": "tile",
+          "settings": {
+            "text": "<h2>Our Vision<\/h2><p>Is to create a world where high-quality water bottles are readily available to anyone passionate about sustainability.<\/p>",
+            "image": "shopify:\/\/shop_images\/our-vision.jpg"
+          }
+        },
+        "a89caf34-f22d-41bb-9da5-91689bc6c6d2": {
+          "type": "tile",
+          "settings": {
+            "text": "<h2>Our Mission<\/h2><p>Is to revolutionize the way we hydrate by creating a bottle that not only quenches your thirst but also nourishes the planet.<\/p>",
+            "image": "shopify:\/\/shop_images\/our-mission.jpg"
+          }
+        },
+        "fc45eee0-72af-4ee0-abc0-c196c4325848": {
+          "type": "tile",
+          "settings": {
+            "text": "<h2>Our Dedication<\/h2><p>Nuvisso is more than just a brand. It’s a commitment to creating positive change in the world. We believe in the power of collective action and the importance of giving back. That’s why a portion of our profits is dedicated to supporting organisations that are tirelessly working towards making the world a better place for everyone. Together, let’s make a difference and create a brighter future for all.<\/p>",
+            "image": "shopify:\/\/shop_images\/our-dedication.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "af399e76-a1d2-444a-9170-9f5fd8e3afe3",
+        "a89caf34-f22d-41bb-9da5-91689bc6c6d2",
+        "fc45eee0-72af-4ee0-abc0-c196c4325848"
+      ],
+      "settings": {
+        "use_wave": true,
+        "color_scheme": "inverse",
+        "vertical_alignment": "center",
+        "horizontal_alignment": "start",
+        "text_align": "left",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_top_mob": 60,
+        "padding_bottom_mob": 60
+      }
+    },
+    "b32d51fd-50a9-4f85-9632-6ebc93ac16e0": {
+      "type": "instagram-feed",
+      "settings": {
+        "text": "<h2>Sneak peek through customer lens<\/h2><p>Share a photo of your NUVISSO by tagging us on a post for the chance to be featured!<\/p>",
+        "text_align": "center",
+        "color_scheme": "background-1",
+        "btn_caption": "Check our Instagram page",
+        "btn_label": "Visit",
+        "btn_link": "https:\/\/www.instagram.com\/raysvisual\/",
+        "padding_top": 132,
+        "padding_bottom": 62,
+        "padding_top_mob": 34,
+        "padding_bottom_mob": 34
+      }
+    }
+  },
+  "order": [
+    "df789316-4717-4857-9fc8-9c27d4f0b3a0",
+    "60cbe497-3b97-4f2a-9615-7eaff7fd182e",
+    "b32d51fd-50a9-4f85-9632-6ebc93ac16e0"
+  ]
+}

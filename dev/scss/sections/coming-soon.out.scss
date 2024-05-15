@@ -1,0 +1,202 @@
+@import '../settings/variables';
+@import "../settings/bootstrap-media";
+@import "../settings/buttons";
+
+.password {
+	.password-header_transparent {
+		.underlined-link:not(.password__footer-text a) {
+			color: #FFFFFF;
+		}
+		.modal__toggle-open {
+			font-weight: 700;
+		}
+		.modal__content {
+			position: fixed;
+			input {
+				height: 5rem;
+				padding: 2.2rem var(--page-width-x-paddings-mobile) 0.8rem 1.5rem;
+				&:focus,
+				&:active,
+				&:not(:placeholder-shown) {
+					~.field__label {
+						top: 5px !important;
+						font-size: 12px;
+						font-weight: 400;
+					}
+				}
+			}
+			button {
+				height: 5rem;
+			}
+			label {
+				top: 15px;
+			}
+		}
+	}
+	.password-main {
+		section {
+			position: relative;
+			.icon-line-snake {
+				position: absolute;
+				height: 65px;
+				width: auto;
+				bottom: 50px;
+				left: -50px;
+				@include media-breakpoint-up(md) {
+					bottom: 120px;
+					left: -50px;
+				}
+				@include media-breakpoint-up(xl) {
+					height: 200px;
+					bottom: 60px;
+					left: -50px;
+				}
+				path {
+					&:nth-of-type(1) {
+						color: #f1c117;
+					}
+					&:nth-of-type(2),
+					&:nth-of-type(3) {
+						color: #ee2a7f;
+					}
+				}
+			}
+			.banner {
+				overflow: hidden;
+				height: 100%;
+				&__media {
+					img {
+						height: 100%;
+						width: 100%;
+						object-fit: cover;
+					}
+				}
+				&__content {
+					justify-content: flex-start;
+					@include media-breakpoint-down(sm) {
+						justify-content: center;
+						align-items: center;
+						padding: 0 15px;
+					}
+					.email-signup-banner__box {
+						background-color: transparent;
+						max-width: 1000px;
+						text-align: left;
+						margin: 150px 0;
+						@include media-breakpoint-down(sm) {
+							text-align: center;
+						}
+						.large-heading {
+							text-transform: uppercase;
+							-webkit-text-fill-color: transparent;
+							font-size: 90px;
+							font-weight: 900;
+							margin: 20px 0;
+							@include media-breakpoint-down(lg) {
+								font-size: 64px;
+								font-weight: 700;
+								margin: 15px 0;
+							}
+							@include media-breakpoint-down(sm) {
+								font-size: 40px;
+							}
+						}
+					}
+					.newsletter-form {
+						max-width: 100%;
+						.newsletter-form__field-wrapper {
+							max-width: 800px;
+							display: flex;
+							@include media-breakpoint-down(sm) {
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+							}
+							.field {
+								width: auto;
+								@include media-breakpoint-down(sm) {
+									width: 225px;
+								}
+								input {
+									margin-right: 10px;
+									max-width: 300px;
+									height: 5rem;
+									opacity: 0.6;
+									background-color: #FFFFFF;
+									padding: 2.2rem var(--page-width-x-paddings-mobile) 0.8rem 1.5rem;
+									@include media-breakpoint-down(sm) {
+										width: 100%;
+										max-width: 100%;
+										margin-right: 0;
+										margin-bottom: 10px;
+									}
+									&:focus,
+									&:active,
+									&:not(:placeholder-shown) {
+										~.field__label {
+											top: 5px !important;
+											font-size: 12px;
+											font-weight: 400;
+										}
+									}
+								}
+								label {
+									font-size: 16px;
+									font-weight: 700;
+									top: 15px !important;
+								}
+								&-button {
+									width: 225px;
+									button {
+										text-transform: capitalize;
+										font-size: 20px;
+										font-weight: 700;
+										height: 5rem;
+										@include media-breakpoint-down(sm) {
+											max-width: 300px;
+											width: 100%;
+										}
+									}
+								}
+							}
+						}
+					}
+					.coming-soon__subheading {
+						h1, h2, h3, h4 {
+							margin: 0;
+							color: rgb(var(--gradient-background));
+							@include media-breakpoint-down(sm) {
+							}
+						}
+						p {
+							text-align: left;
+							position: relative;
+							margin: 0;
+							margin-bottom: 12px;
+							font-size: 22px;
+							font-weight: 600;
+							padding-bottom: 8px;
+							color: rgb(var(--gradient-background));
+							@include media-breakpoint-down(lg) {
+								font-size: 18px;
+							}
+							@include media-breakpoint-down(sm) {
+								font-size: 16px;
+							}
+							&:after {
+								content: "";
+								display: block;
+								position: absolute;
+								left: 0;
+								left: 0;
+								width: 30px;
+								bottom: 0;
+								border-bottom: 3px solid #f1c117;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

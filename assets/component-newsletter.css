@@ -1,0 +1,116 @@
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form {
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 48rem;
+  }
+}
+
+.newsletter-form__field-wrapper {
+  width: 100%;
+}
+
+.newsletter-form__field-wrapper .field__input {
+  padding-right: 5rem;
+  border-radius: var(--inputs-radius);
+  box-shadow: unset !important;
+}
+
+.newsletter-form__field-wrapper .field {
+  z-index: 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-form__field-wrapper .field:before,
+.newsletter-form__field-wrapper .field:after {
+  content: unset;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form__field-wrapper .field {
+    z-index: 0;
+    flex-direction: row;
+  }
+}
+
+.newsletter-form__message {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.newsletter-form__message--success {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .newsletter-form__message {
+    justify-content: flex-start;
+  }
+}
+
+.newsletter-form__button {
+  position: relative;
+  margin: 1.3rem 0 0;
+  right: var(--inputs-border-width);
+  z-index: 2;
+}
+
+@media screen and (max-width: 1199px) {
+  .newsletter-form__field-wrapper .field__input {
+    border-radius: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .newsletter-form__button {
+    max-width: unset;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .newsletter-form__button {
+    margin: 0;
+    position: absolute;
+    height: auto;
+    min-height: unset;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .newsletter-form__button {
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+}
+
+.newsletter-form__button:focus-visible {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:focus {
+  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0 0.4rem rgba(var(--color-foreground));
+  background-color: rgb(var(--color-background));
+}
+
+.newsletter-form__button:not(:focus-visible):not(.focused) {
+  box-shadow: inherit;
+}
+
+.newsletter-form__button .icon {
+  width: 1.5rem;
+}

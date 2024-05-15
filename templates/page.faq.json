@@ -1,0 +1,115 @@
+{
+  "sections": {
+    "5bfb1263-237c-41fc-932d-f03e39b0c120": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/large-group-standing-in-office.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "main": {
+      "type": "collapsible-content",
+      "blocks": {
+        "template--20134975308060__main-collapsible_row-1": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are Nuvisso hydration products safe to use?",
+            "icon": "none",
+            "row_content": "<p>Yes, all Nuvisso hydration products are crafted with safety in mind. They are made from high-quality materials, including 304 stainless steel and BPA-free plastics, ensuring your hydration experience is both stylish and safe.<\/p>",
+            "page": ""
+          }
+        },
+        "template--20134975308060__main-collapsible_row-2": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I clean and maintain my Nuvisso water bottle?",
+            "icon": "none",
+            "row_content": "<p>Cleaning instructions vary slightly between models, but generally, it is recommended to hand wash with mild soap and warm water. Avoid using bleach or abrasive cleaners. Please refer to the product manual for specific care instructions.<\/p>",
+            "page": ""
+          }
+        },
+        "template--20134975308060__main-collapsible_row-3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use Nuvisso water bottles for both hot and cold beverages?",
+            "icon": "none",
+            "row_content": "<p>Absolutely! Nuvisso water bottles are designed for versatility. They can keep your drinks cold for up to 24 hours or hot for 12 hours, providing a wide range of beverage options.<\/p>",
+            "page": ""
+          }
+        },
+        "template--20134975308060__main-collapsible_row-4": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What sets Nuvisso apart in terms of design philosophy?",
+            "icon": "none",
+            "row_content": "<p>Nuvisso stands out for its commitment to blending chic aesthetics with functionality, creating hydration products that not only elevate your daily routine but also reflect a sense of style and sophistication.<\/p>",
+            "page": ""
+          }
+        },
+        "a7705a43-e74e-4986-96b4-5d0c3d5333ed": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I expect consistent performance across all Nuvisso hydration products?",
+            "icon": "none",
+            "row_content": "<p>Yes, Nuvisso maintains a commitment to quality and performance across its entire range. Whether you choose from the Daily or Enthusiast Collection, you can trust that each product undergoes stringent standards for durability and functionality.<\/p>",
+            "page": ""
+          }
+        },
+        "923c160e-c3d7-409d-9753-340f1d10f0ca": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are Nuvisso hydration products environmentally friendly?",
+            "icon": "none",
+            "row_content": "<p>Nuvisso is dedicated to sustainability. Our products are crafted with eco-friendly materials, and we encourage responsible consumption by providing durable, reusable alternatives to single-use plastics.<\/p>",
+            "page": ""
+          }
+        },
+        "0a09bbc2-fdaa-4d80-b7d3-d9d5d1b2936a": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does Nuvisso cater to different lifestyles with its hydration offerings?",
+            "icon": "none",
+            "row_content": "<p>Nuvisso recognizes the diversity of lifestyles and offers hydration companions tailored for various needs – from daily routines to active lifestyles. Our range includes sleek designs suitable for work, travel, fitness, and more.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20134975308060__main-collapsible_row-1",
+        "template--20134975308060__main-collapsible_row-2",
+        "template--20134975308060__main-collapsible_row-3",
+        "template--20134975308060__main-collapsible_row-4",
+        "a7705a43-e74e-4986-96b4-5d0c3d5333ed",
+        "923c160e-c3d7-409d-9753-340f1d10f0ca",
+        "0a09bbc2-fdaa-4d80-b7d3-d9d5d1b2936a"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "<strong>FAQ<\/strong>",
+        "heading_size": "h0",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "5bfb1263-237c-41fc-932d-f03e39b0c120",
+    "main"
+  ]
+}
